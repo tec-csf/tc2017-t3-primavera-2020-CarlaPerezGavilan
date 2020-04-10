@@ -48,23 +48,16 @@ void printSolution(int dist[], int target, int first,
 void dijkstra(int graph[V][V], int begin, int end) 
 { 
       
-    // The output array. dist[i] 
-    // will hold the shortest 
-    // distance from src to i 
+
     int dist[V];  
   
-    // sptSet[i] will true if vertex 
-    // i is included / in shortest 
-    // path tree or shortest distance  
-    // from src to i is finalized 
+
     bool sptSet[V]; 
   
-    // Parent array to store 
-    // shortest path tree 
+
     int parent[V]; 
   
-    // Initialize all distances as  
-    // INFINITE and stpSet[] as false 
+ 
     for (int i = 0; i < V; i++) 
     { 
         parent[begin] = -1; 
@@ -72,19 +65,13 @@ void dijkstra(int graph[V][V], int begin, int end)
         sptSet[i] = false; 
     } 
 
-    // Distance of source vertex  
-    // from itself is always 0 
+   
     dist[begin] = 0; 
   
-    // Find shortest path 
-    // for all vertices 
+
     for (int count = 0; count < V - 1; count++) 
     { 
-        // Pick the minimum distance 
-        // vertex from the set of 
-        // vertices not yet processed.  
-        // u is always equal to src 
-        // in first iteration. 
+   
         int u = minDistance(dist, sptSet); 
   
         // Mark the picked vertex  
@@ -92,18 +79,8 @@ void dijkstra(int graph[V][V], int begin, int end)
         sptSet[u] = true; 
            printf("hola\n");
 
-        // Update dist value of the  
-        // adjacent vertices of the 
-        // picked vertex. 
         for (int v = 0; v < V; v++) 
   
-            // Update dist[v] only if is 
-            // not in sptSet, there is 
-            // an edge from u to v, and  
-            // total weight of path from 
-            // src to v through u is smaller 
-            // than current value of 
-            // dist[v] 
             if (!sptSet[v] && graph[u][v] && 
                 dist[u] + graph[u][v] < dist[v]) 
             { 
@@ -112,16 +89,12 @@ void dijkstra(int graph[V][V], int begin, int end)
             }  
     } 
   
-    // print the constructed 
-    // distance array 
+
     printSolution(dist, end, begin, parent); 
 } 
   
-// Driver Code 
 int main() 
 { 
-    //  Let us create the example 
-    // graph discussed above 
     int graph[V][V] = {{0, 4, 0, 0, 0, 0, 0, 8, 0}, 
                        {4, 0, 8, 0, 0, 0, 0, 11, 0}, 
                         {0, 8, 0, 7, 0, 4, 0, 0, 2}, 
