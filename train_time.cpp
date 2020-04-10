@@ -74,10 +74,7 @@ void dijkstra(int graph[V][V], int begin, int end)
    
         int u = minDistance(dist, sptSet); 
   
-        // Mark the picked vertex  
-        // as processed 
         sptSet[u] = true; 
-           printf("hola\n");
 
         for (int v = 0; v < V; v++) 
   
