@@ -1,12 +1,10 @@
-language: 
-- cpp
-python:
-  - "3.5"
+language: cpp
 dist: bionic
 compiler: gcc
 cache: pip
 install:
-  - pip install sympy
+  - sudo apt-get install -qq g++-6
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
 script: 
   - g++ train_time.cpp -std=c++17 -o travis_gcc_cpp17
