@@ -3,11 +3,9 @@
 #include <stdio.h> 
 #include <limits.h> 
 #include <iostream>
-  
 
 #define V 9 
   
-
 int minDistance(int dist[],  
                 bool sptSet[]) 
 { 
