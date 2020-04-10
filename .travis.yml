@@ -1,0 +1,16 @@
+language: 
+- cpp
+- python
+python:
+  - "3.5"
+dist: bionic
+compiler: gcc
+cache: pip
+install:
+  - pip install sympy
+
+script: 
+  - g++ train_time.cpp -std=c++17 -o travis_gcc_cpp17
+  - ./travis_gcc_cpp17 
+  - g++ median.cpp -std=c++17 -o travis_gcc_cpp17
+  - ./travis_gcc_cpp17 
