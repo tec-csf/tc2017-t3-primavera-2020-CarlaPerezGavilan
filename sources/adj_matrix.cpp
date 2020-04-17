@@ -105,7 +105,7 @@ void adjMatrix(int adj_matrix[N][N]){
 }
 
 void getTimes(string station_a, string station_b){
-for(int a=0; a<N; a++){
+for(int a=0; a<matrix.size(); a++){
     if((matrix.at(a).at(2)).find(station_a) != std::string::npos)
     {
         if((matrix.at(a).at(3)).find(station_b) != std::string::npos){
