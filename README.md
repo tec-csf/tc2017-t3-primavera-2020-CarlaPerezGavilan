@@ -36,7 +36,44 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 ## 2. Solución
 
-*[Incluya aquí una explicación de la solución implementada]*
+### Problema 4: encontrar la mediana dados dos vectores X y Y de tamaño N
+
+### Planteamiento
+
+Sean X e Y dos vectores de tamaño n, ordenados de forma no decreciente. Se necesita implementar un algoritmo para calcular la mediana de los 2n elementos que contienen X e Y. Recuerde que la mediana de un vector de k elementos es aquel elemento que ocupa la posición (k+1)÷2 una vez el vector está ordenado de forma creciente. Dicho de otra forma, la mediada es aquel elemento que, una vez ordenado el vector, deja la mitad de los elementos a cada uno de sus lados. Como en este caso k = 2n (y por tanto par) se busca el elemento en posición n de la unión ordenada de X e Y
+
+#### Solución
+
+1. Se calcula la mediana de cada uno de los arreglos por separado, obteniendo la mediana de X y la mediana de Y
+
+2. Se comparan ambos resultados, y se ejecuta lo siguiente: 
+
+3. Si son iguales, regresar cualquiera de las dos. 
+
+4. Si una es mayor que la otra, calcular la mediana de el subarreglo de 0 a la mediana mayor y de la mediana menor al final del arreglo. 
+
+5. Se repite el mismo proceso por cada subarreglo hasta que el tamaño de los subarreglos se vuelve 2 o menor. 
+
+6. Si ambos tienen un tamaño de dos se utiliza la siguiente fórmula: 
+
+*median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1])*
+
+### Requerimientos
+
+> IMPORTANTE: Ambos arreglos deben ser del mismo tamaño y estar ordenados de forma ascendente. 
+
+	-g++ ./problem4_median/Median.cpp
+	-./a.out
+
+
+### Archivos Estructura 
+
+Puede encontrar el archivo de implementación y el archivo header bajo los nombres, en la carpeta de problema4_median: 
+- *Medain.cpp*
+- *Median.hpp*
+
+Para poder correrlos se ejecutan los siguientes comandos en el makeFile
+
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
 
@@ -44,4 +81,4 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 ## 3. Referencias
 
-*[Incluya aquí las referencias a sitios de interés y cualquier otra información que haya utilizado para realizar la actividad y que le puedan ser de utilidad a otras personas que quieran usarlo como referencia]*
+### Problema 4: mediana
