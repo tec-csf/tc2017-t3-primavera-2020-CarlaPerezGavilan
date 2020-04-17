@@ -3,104 +3,99 @@
 #include <stdio.h> 
 #include <limits.h> 
 #include <iostream>
+#include "adj_matrix.cpp"
 
-#define V 9 
+#define V 4 
   
-int minDistance(int dist[],  
-                bool sptSet[]) 
+
+string stations[] = {"A", "B", "C", "D"};
+
+int min(int times[],  bool visited[]) 
 { 
-    int min = INT_MAX, min_index; 
+    int min = INT_MAX, index; 
   
-    for (int v = 0; v < V; v++) 
-        if (sptSet[v] == false && 
-                   dist[v] <= min) 
-            min = dist[v], min_index = v; 
-  
-    return min_index; 
+    for (int i = 0; i < V; i++){
+         if (!visited[i] && times[i] <= min){
+            min = times[i];
+            index = i; 
+        }
+    }
+       
+    return index; 
 } 
   
 
 void printPath(int parent[], int j) 
 { 
-      
-    if (parent[j] == - 1) 
-        return; 
-  
-    printPath(parent, parent[j]); 
-    printf("%d ", j); 
+    cout<<endl;
+    string path= "arrived";
+      while(parent[j]!=-1){
+        path=stations[j]+"-->"+path;
+        cout<<" "<<stations[parent[j]]<<" --> "<<stations[j]<<endl;
+        getTimes(stations[parent[j]], stations[j]);
+        j=parent[j];
+        cout<<endl;
+      }
+    cout<<stations[j]<<"-->"<<path<<endl;
+
+
 } 
   
 
 void printSolution(int dist[], int target, int first,  
                       int parent[]) 
 { 
-    printf("Vertex\tTime\tStations"); 
+    printf("Source->Destination  =  "); 
     
-    printf("\n%d -> %d \t\t %d\t\t%d ", 
-        first, target, dist[target], first); 
+    cout<<stations[first]<<"-->"<<stations[target]<<endl;
+    cout<<"total time  =  "<<dist[target]<<" minutes "<<endl; 
+    cout<<"trains to take  =  ";
     printPath(parent, target); 
 
 } 
   
 
-void dijkstra(int graph[V][V], int begin, int end) 
+void bestpath(int graph[V][V], int begin, int end) 
 { 
       
 
-    int dist[V];  
-  
-
-    bool sptSet[V]; 
-  
-
+    int times[V];  
+    bool visited[V]; 
     int parent[V]; 
   
  
     for (int i = 0; i < V; i++) 
     { 
         parent[begin] = -1; 
-        dist[i] = INT_MAX; 
-        sptSet[i] = false; 
+        times[i] = INT_MAX; 
+        visited[i] = false; 
     } 
 
    
-    dist[begin] = 0; 
+    times[begin] = 0; 
   
 
-    for (int count = 0; count < V - 1; count++) 
+    for (int i = 0; i < V - 1; i++) 
     { 
-   
-        int u = minDistance(dist, sptSet); 
+        int a = min(times, visited); 
+        visited[a] = true; 
+        for (int j = 0; j < V; j++) 
   
-        sptSet[u] = true; 
-
-        for (int v = 0; v < V; v++) 
-  
-            if (!sptSet[v] && graph[u][v] && 
-                dist[u] + graph[u][v] < dist[v]) 
+            if (!visited[j] && graph[i][j] && times[i] + graph[i][j] < times[j]) 
             { 
-                parent[v] = u; 
-                dist[v] = dist[u] + graph[u][v]; 
+                parent[j] = i; 
+                times[j] = times[i] + graph[i][j]; 
             }  
     } 
-  
-
-    printSolution(dist, end, begin, parent); 
+    printSolution(times, end, begin, parent); 
 } 
   
 int main() 
 { 
-    int graph[V][V] = {{0, 4, 0, 0, 0, 0, 0, 8, 0}, 
-                       {4, 0, 8, 0, 0, 0, 0, 11, 0}, 
-                        {0, 8, 0, 7, 0, 4, 0, 0, 2}, 
-                        {0, 0, 7, 0, 9, 14, 0, 0, 0}, 
-                        {0, 0, 0, 9, 0, 10, 0, 0, 0}, 
-                        {0, 0, 4, 0, 10, 0, 2, 0, 0}, 
-                        {0, 0, 0, 14, 0, 2, 0, 1, 6}, 
-                        {8, 11, 0, 0, 0, 0, 1, 0, 7}, 
-                        {0, 0, 2, 0, 0, 0, 6, 7, 0} 
-                    }; 
-  
-    dijkstra(graph, 2, 6); 
+    read("test.csv");
+
+    int graphs[V][V];
+    adjMatrix(graphs);
+    bestpath(graphs, 0, 2); 
     return 0; 
 }
