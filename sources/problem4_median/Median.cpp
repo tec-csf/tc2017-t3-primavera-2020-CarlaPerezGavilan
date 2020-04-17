@@ -1,17 +1,32 @@
+/*
+ * This file is part of {{tc2017-t3-primavera-2020-CarlaPerezGavilan}}.
+ *
+ * Median.cpp
+ * Carla Pérez Gavilán Del Castillo
+ * 17/abril/2020
+ * Copyright © 2020 Carla Pérez Gavilán Del Castillo. All rights reserved.
+ * 
+ */
 
 #include <vector>
 #include <cstdlib>
 #include <iostream>
 
+#include "Median.hpp"
 
-using namespace std; 
-  
+using namespace med;
+
+
+/**
+ * Determines the median from two arrays
+ *
+ * @param[in] array a of type T 
+ * @param[in] array b of type T
+ * @param[in] size of both arrays, that should be the same 
+ * @param[out] median of both arrays 
+ */
 template <class T>
-class Media{
-    public: 
-
-
-T twoArrayMedian(T arr_a[], T arr_b[], int n)
+T Media<T>::twoArrayMedian(T arr_a[], T arr_b[], int n)
 {
        if(n<=0){
            return -1;
@@ -22,7 +37,7 @@ T twoArrayMedian(T arr_a[], T arr_b[], int n)
        }
 
         if(n==2){
-            return (max(arr_a[0],arr_b[0])+min(arr_a[1], arr_b[1]))/2;
+            return (std::max(arr_a[0],arr_b[0])+std::min(arr_a[1], arr_b[1]))/2;
         }
 
        int median_a = getMedian(arr_a, n);
@@ -53,8 +68,17 @@ T twoArrayMedian(T arr_a[], T arr_b[], int n)
 
 }
 
-//function that gets median of vectorn
-int getMedian(int sort_vect[], int n)
+
+/**
+ * Determines the median of a single array
+ *
+ * @param[in] array to determine median
+ * @param[in] size of array n 
+ * @param[out] median of array
+ */
+
+template <class T>
+T Media<T>::getMedian(T sort_vect[], int n)
 {
     if(n%2==0){
         return (sort_vect[n/2]+sort_vect[n/2+1])/2;
@@ -63,20 +87,17 @@ int getMedian(int sort_vect[], int n)
     }
 }
 
-
-
-};
-
-
-
-int main() 
+int main(int argc, const char * argv[]) 
 { 
-    Media<int> m;
-    int size=5;
+    int size = 5;
     int a[] = {1, 12, 15, 26, 38}; 
     int b[] = {2, 13, 17, 30, 45}; 
-    cout<<"this is result= "<< m.twoArrayMedian(a, b, size)<<endl;
+    Media<int> m;
+    std::cout<<"this is result= "<< m.twoArrayMedian(a, b, size)<<std::endl;
     return 0; 
 } 
+
+
+
   
 
