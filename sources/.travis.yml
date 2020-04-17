@@ -6,8 +6,4 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
 script: 
-  - g++ ./sources/adj_matrix.cpp 
-  - g++ ./sources/train_time.cpp -o travis_gcc_cpp17
-  - ./travis_gcc_cpp17 
-  - g++ ./sources/median.cpp 
-  - ./a.out
+  - make
