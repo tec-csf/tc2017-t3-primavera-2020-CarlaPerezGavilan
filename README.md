@@ -117,8 +117,9 @@ Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo
 
 7. Se imprime el camino, el tiempo total de viaje y los posibles horarios.
 
+#### Imagen de ejemplo
 
-![image] (./algorithm.jpg)
+![image](algorithm.jpg)
 
 
 ### Archivos Estructura 
