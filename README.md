@@ -118,9 +118,8 @@ Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo
 7. Se imprime el camino, el tiempo total de viaje y los posibles horarios.
 
 
-![AltText] (algorithm.jpg)
+![image] (./algorithm.jpg)
 
-![Fuente](https://www.programiz.com/dsa/dijkstra-algorithm)
 
 ### Archivos Estructura 
 
@@ -161,6 +160,9 @@ VER EL DESGLOSE DE COMPLEJIDAD:
 ### Problema 4: estación de ferrocaril 
 
 * [ejemplo de implementación de problema 7](https://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/)
+
+* [Fuente de foto](https://www.programiz.com/dsa/dijkstra-algorithm)
+
 
 
 
