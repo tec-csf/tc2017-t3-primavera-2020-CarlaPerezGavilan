@@ -49,6 +49,8 @@ Sean X e Y dos vectores de tamaño n, ordenados de forma no decreciente. Se nece
 
 #### Solución
 
+**TÉCNICA: DIVIDE Y VENCERÁS**
+
 1. Se calcula la mediana de cada uno de los arreglos por separado, obteniendo la mediana de X y la mediana de Y
 
 2. Se comparan ambos resultados, y se ejecuta lo siguiente: 
@@ -63,7 +65,7 @@ Sean X e Y dos vectores de tamaño n, ordenados de forma no decreciente. Se nece
 
 *median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1])*
 
-6. Si ambos tienen un tamaño de uni se utiliza la siguiente fórmula: 
+7. Si ambos tienen un tamaño de uni se utiliza la siguiente fórmula: 
 
 *median = (ar1[0] + ar2[0])/2*
 
@@ -91,12 +93,29 @@ O(n) = Log(n)
 VER EL DESGLOSE DE COMPLEJIDAD: 
 [complejidad problema 4](./sources/problem4_median/Complejidad_4.pdf)
 
+
+### Problema 7: encontrar el camino más corto en una estación de trenes a través del algoritmo de Djkstra
+
+### Planteamiento
+Una compañía de ferrocarriles sirve n estaciones S1,...,Sn y trata de mejorar su servicio al cliente mediante terminales de información. Dadas una estación origen So y una estación destino Sd, un terminal debe ofrecer (inmediatamente) la información sobre el horario de los trenes que hacen la conexión entre So y Sd y que minimizan el tiempo de trayecto total.
+
+#### Solución
+
+**TÉCNICA: PROGRAMACIÓN DINÁMICA**
+
+Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo de boleanos para registrar que vértices han sido visitados, y un arreglo con las distancias hacia cada uno de los nodos. 
+1. Se selecciona el vértice de inicio y se  
+
 ### 2.1 Pasos a seguir para utilizar la aplicación
 
-*[Incluya aquí una guía paso a paso para poder utilizar la aplicación, desde la clonación del repositorio, la compilación del código hasta la ejecución de los ejemplos para visualizar los resultados.]*
+Debemos almacenar 
+1. 
 
 ## 3. Referencias
 
 ### Problema 4: mediana
 
-* [a link](https://www.geeksforgeeks.org/median-of-two-sorted-arrays/)
+* [ejemplo de implementación de problema 4](https://www.geeksforgeeks.org/median-of-two-sorted-arrays/)
+
+
+

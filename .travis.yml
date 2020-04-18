@@ -6,4 +6,5 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
 script: 
-  - cd sources && make
+  - cd sources/problem4_median && make
+  - cd sources/problem7_train && make
