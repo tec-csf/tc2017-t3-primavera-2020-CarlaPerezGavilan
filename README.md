@@ -149,7 +149,7 @@ Ya existe un Makefile por lo tanto se puede simplemente correr:
 O(n) = nˆ2
 
 VER EL DESGLOSE DE COMPLEJIDAD: 
-[complejidad problema 4](./sources/problem7_train/Complejidad_7.pdf)
+[complejidad problema 7](./sources/problem7_train/Complejidad_7.pdf)
 
 
 ## 3. Referencias

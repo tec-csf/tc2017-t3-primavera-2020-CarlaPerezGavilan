@@ -107,12 +107,12 @@
     
         for (int i = 0; i < V; i++) 
         { 
-            parent[begin] = -1; 
+            
             times[i] = INT_MAX; 
             visited[i] = false; 
         } 
 
-    
+        parent[begin] = -1; 
         times[begin] = 0; 
     
 
