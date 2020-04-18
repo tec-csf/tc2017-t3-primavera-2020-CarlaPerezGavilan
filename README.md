@@ -117,6 +117,9 @@ Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo
 
 7. Se imprime el camino, el tiempo total de viaje y los posibles horarios.
 
+![Imagen mostrando algoritmo de djkastra] (https://cdn.programiz.com/sites/tutorial2program/files/Dijkstra%27s-algorithm.jpg)
+
+![Fuente](https://www.programiz.com/dsa/dijkstra-algorithm)
 
 ### Archivos Estructura 
 
@@ -124,9 +127,11 @@ Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo
 - *Train.hpp* archivo header de clase
 - *adj_matrix.cpp* archivo donde se implementan métodos para la lectura de csv y preparación de matriz de adyacencia. 
 -*test.csv* esta es una tabla de horarios con la siguiente estructrua, sin encabezados:
-| Horario Salida    | Horario Llegada  | Estación Salida  | Estación Llegada|
-| ------------------|:----------------:| ----------------:|----------------:|
-| 10:00             |11:00             | A                | B               |
+
+
+    | Horario Salida    | Horario Llegada  | Estación Salida  | Estación Llegada|
+    | ------------------|:----------------:| ----------------:|----------------:|
+    | 10:00             |11:00             | A                | B               |
 ### Requerimientos
 
 > IMPORTANTE: 
