@@ -1,8 +1,8 @@
-#include "train_time.cpp"
+#include "Train.hpp"
 
 int main(int argc, const char * argv[]) 
 { 
-    TrainTime t;
+    TrainTime<int> t;
     read("test.csv");
     int graphs[4][4];
     adjMatrix(graphs);

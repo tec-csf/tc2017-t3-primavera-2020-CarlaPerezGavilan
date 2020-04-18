@@ -1,3 +1,14 @@
+/*
+ * This file is part of {{tc2017-t3-primavera-2020-CarlaPerezGavilan}}.
+ * 
+ * adj_matrix.cpp
+ * Carla Pérez Gavilán Del Castillo
+ * Divide & Conquer
+ * 17/abril/2020
+ * Copyright © 2020 Carla Pérez Gavilán Del Castillo. All rights reserved.
+ * 
+ */
+
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -6,11 +17,10 @@
 #define N 4
 
 
-using namespace std;
 
 
 
-vector<vector<string> > matrix;
+std::vector<std::vector<std::string> > matrix;
 
 
 struct TIME
@@ -19,6 +29,13 @@ struct TIME
   int hours;
 };
 
+/**
+ * Substract two times and return difference in hours and minutes 
+ *
+ * @param[in] Time 1 expressed in hours: minutes 
+ * @param[in] Time 2 expressed in hours: minutes 
+ * @param[in] difference in time is stored in this variable 
+ */
 void computeTimeDifference(struct TIME t1, struct TIME t2, struct TIME *difference)
 {
     if(t2.minutes > t1.minutes)
@@ -30,16 +47,21 @@ void computeTimeDifference(struct TIME t1, struct TIME t2, struct TIME *differen
     difference->hours = t1.hours-t2.hours;
 }
 
-
-void read(string name){
-    ifstream data(name);
-    string line;
-    while(getline(data, line))
+/**
+ * Read csv file that stores time table 
+ *
+ * @param[in] Name of file to be read 
+ */
+void read(std::string name)
+{
+    std::ifstream data(name);
+    std::string line;
+    while(std::getline(data, line))
         {
-        stringstream lineStream(line);
-        string cell;
-        vector<string> row;
-        while(getline(lineStream, cell, ','))
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> row;
+        while(std::getline(lineStream, cell, ','))
         {
             row.push_back(cell);
         }
@@ -48,10 +70,16 @@ void read(string name){
     }
 }
 
-void adjMatrix(int adj_matrix[N][N]){
+/**
+ * Turns timetable read in csv file into an adjacency Matrix 
+ *
+ * @param[in] matrix in which adjacency will be stored 
+ */
+void adjMatrix(int adj_matrix[N][N])
+{
 
    
-    string stations[] = {"A", "B", "C", "D"};
+    std::string stations[] = {"A", "B", "C", "D"};
 
     for(int i=0;i<N; i++){
         for(int j=0; j<N; j++){
@@ -63,12 +91,12 @@ void adjMatrix(int adj_matrix[N][N]){
 
     for(int a=0; a<matrix.size(); a++)
     {   
-        string time_initial = matrix.at(a).at(0);
-        string time_final = matrix.at(a).at(1);
+        std::string time_initial = matrix.at(a).at(0);
+        std::string time_final = matrix.at(a).at(1);
         std::stringstream test_initial(time_initial);
         std::stringstream test_final(time_final);
-        string inital, final;
-        vector<string> initial_t, final_t;
+        std::string inital, final;
+        std::vector<std::string> initial_t, final_t;
         while(std::getline(test_initial, inital, ':'))
         {
             initial_t.push_back(inital);
@@ -89,13 +117,17 @@ void adjMatrix(int adj_matrix[N][N]){
         
         int total = difference.hours*60 + difference.minutes;
         int row=10, column=10;
-        for(int i =0; i<N; i++){
-            if((matrix.at(a).at(2)).find(stations[i]) != std::string::npos){
+        for(int i =0; i<N; i++)
+        {
+            if((matrix.at(a).at(2)).find(stations[i]) != std::string::npos)
+            {
                 row = i;
             }
         }
-        for(int j =0; j<N; j++){
-            if((matrix.at(a).at(3)).find(stations[j]) != std::string::npos){
+        for(int j =0; j<N; j++)
+        {
+            if((matrix.at(a).at(3)).find(stations[j]) != std::string::npos)
+            {
                 column = j;
             }
         }
@@ -104,16 +136,25 @@ void adjMatrix(int adj_matrix[N][N]){
 
 }
 
-void getTimes(string station_a, string station_b){
-for(int a=0; a<matrix.size(); a++){
-    if((matrix.at(a).at(2)).find(station_a) != std::string::npos)
+/**
+ * Prints all the available times for source to destination  
+ *
+ * @param[in] source station
+ * @param[in] final destination 
+ */
+void getTimes(std::string station_a, std::string station_b)
+{
+    for(int a=0; a<matrix.size(); a++)
     {
-        if((matrix.at(a).at(3)).find(station_b) != std::string::npos){
-            cout<<matrix.at(a).at(0)<<" -- "<<matrix.at(a).at(1)<<endl;
-        }
+        if((matrix.at(a).at(2)).find(station_a) != std::string::npos)
+        {
+            if((matrix.at(a).at(3)).find(station_b) != std::string::npos)
+            {
+                std::cout<<matrix.at(a).at(0)<<" -- "<<matrix.at(a).at(1)<<std::endl;
+            }
 
+        }
     }
-}
 }
 
 
