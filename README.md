@@ -104,18 +104,57 @@ Una compañía de ferrocarriles sirve n estaciones S1,...,Sn y trata de mejorar 
 **TÉCNICA: PROGRAMACIÓN DINÁMICA**
 
 Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo de boleanos para registrar que vértices han sido visitados, y un arreglo con las distancias hacia cada uno de los nodos. 
-1. Se selecciona el vértice de inicio y se  
 
-### 2.1 Pasos a seguir para utilizar la aplicación
+1. Se selecciona el vértice de inicio y se le asigna un tiempo 0 mientras que a todos los demás se les inicializa con una distancia infinita. Todos los nodos se marcan como no visitados. 
 
-Debemos almacenar 
-1. 
+2. Se buscan los nodos adyacentes del primer nodo, para cada nodo se ejecuta lo siguiente: 
+
+3. Se viaja al nodo con menor distancia, y se suma dicha distancia a la distancia inicial. 
+
+5. Se repite el mismo proceso (pasos 2 y 3) con el nodo visitado. 
+
+6. Cuando el nodo visitado es igual al buscado, termina el algoritmo. 
+
+7. Se imprime el camino, el tiempo total de viaje y los posibles horarios.
+
+
+### Archivos Estructura 
+
+- *Train.cpp* archivo con implementación del código
+- *Train.hpp* archivo header de clase
+- *adj_matrix.cpp* archivo donde se implementan métodos para la lectura de csv y preparación de matriz de adyacencia. 
+-*test.csv* esta es una tabla de horarios con la siguiente estructrua, sin encabezados:
+| Horario Salida    | Horario Llegada  | Estación Salida  | Estación Llegada|
+| ------------------|:----------------:| ----------------:|----------------:|
+| 10:00             |11:00             | A                | B               |
+### Requerimientos
+
+> IMPORTANTE: 
+    Si las estaciones no están conectadas entre sí no habrá solución 
+    Los horarios en el csv deben representarse en horario de 24 horas, es decir, 13:00 y no 1:00 pm
+
+	-g++ -std=c++17 source/problem7_train/Train.cpp
+	-./a.out
+
+Ya existe un Makefile por lo tanto se puede simplemente correr:
+    -make
+
+### Complejidad 
+O(n) = nˆ2
+
+VER EL DESGLOSE DE COMPLEJIDAD: 
+[complejidad problema 4](./sources/problem7_train/Complejidad_7.pdf)
+
 
 ## 3. Referencias
 
 ### Problema 4: mediana
 
 * [ejemplo de implementación de problema 4](https://www.geeksforgeeks.org/median-of-two-sorted-arrays/)
+
+### Problema 4: estación de ferrocaril 
+
+* [ejemplo de implementación de problema 7](https://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/)
 
 
 
