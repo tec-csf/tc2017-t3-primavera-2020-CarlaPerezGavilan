@@ -143,7 +143,7 @@ int main(int argc, const char * argv[])
     read("test.csv");
     int graphs[4][4];
     adjMatrix(graphs);
-    t.bestpath(graphs, 0, 2); 
+    t.bestpath(graphs, 1, 3); 
     return 0; 
 }
 

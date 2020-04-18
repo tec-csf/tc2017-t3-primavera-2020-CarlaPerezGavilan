@@ -1,0 +1,11 @@
+Source->Destination  =  A-->C
+total time  =  55 minutes 
+trains to take  =  
+ B --> C
+12:30 -- 12:45
+
+ A --> B
+10:30 -- 12:00
+12:00 -- 12:40
+
+A-->B-->C-->arrived
