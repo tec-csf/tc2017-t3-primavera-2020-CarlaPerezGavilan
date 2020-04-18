@@ -117,7 +117,8 @@ Durante todo el proces se guarda el camino de vertices en un arreglo, un arreglo
 
 7. Se imprime el camino, el tiempo total de viaje y los posibles horarios.
 
-![Imagen mostrando algoritmo de djkastra] (https://cdn.programiz.com/sites/tutorial2program/files/Dijkstra%27s-algorithm.jpg)
+
+![AltText] (https://cdn.programiz.com/sites/tutorial2program/files/Dijkstra%27s-algorithm.jpg)
 
 ![Fuente](https://www.programiz.com/dsa/dijkstra-algorithm)
 
