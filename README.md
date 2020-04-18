@@ -31,7 +31,12 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 - / 			        # Raíz del repositorio
     - README.md			# Archivo con la información general de la actividad (este archivo)
     - sources  			# Códigos fuente con la solución
-    - examples			# Archivos de ejemplo que pueden utilizarse para verificar que la solución funciona.
+        -problema4_median
+        -problema7_train
+    - examples			# Archivos de ejemplo que pueden utilizarse para 
+    verificar que la solución funciona.
+        -problema4_median
+        -problema7_train
 ```
 
 ## 2. Solución
@@ -58,6 +63,12 @@ Sean X e Y dos vectores de tamaño n, ordenados de forma no decreciente. Se nece
 
 *median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1])*
 
+6. Si ambos tienen un tamaño de uni se utiliza la siguiente fórmula: 
+
+*median = (ar1[0] + ar2[0])/2*
+
+8. Si uno tiene un tamaño de uno y otro uno tamaño de dos:
+
 ### Requerimientos
 
 > IMPORTANTE: Ambos arreglos deben ser del mismo tamaño y estar ordenados de forma ascendente. 
@@ -65,6 +76,8 @@ Sean X e Y dos vectores de tamaño n, ordenados de forma no decreciente. Se nece
 	-g++ ./problem4_median/Median.cpp
 	-./a.out
 
+Ya existe un Makefile por lo tanto se puede simplemente correr:
+    -make
 
 ### Archivos Estructura 
 
@@ -72,8 +85,11 @@ Puede encontrar el archivo de implementación y el archivo header bajo los nombr
 - *Medain.cpp*
 - *Median.hpp*
 
-Para poder correrlos se ejecutan los siguientes comandos en el makeFile
+### Complejidad 
+O(n) = Log(n)
 
+VER EL DESGLOSE DE COMPLEJIDAD: 
+[a relative link](./sources/problem_median/Complejidad_4.pdf)
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
 
@@ -82,3 +98,5 @@ Para poder correrlos se ejecutan los siguientes comandos en el makeFile
 ## 3. Referencias
 
 ### Problema 4: mediana
+
+* [a link](https://www.geeksforgeeks.org/median-of-two-sorted-arrays/)
