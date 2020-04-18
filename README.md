@@ -89,7 +89,7 @@ Puede encontrar el archivo de implementación y el archivo header bajo los nombr
 O(n) = Log(n)
 
 VER EL DESGLOSE DE COMPLEJIDAD: 
-[a relative link](./sources/problem_median/Complejidad_4.pdf)
+[complejidad problema 4](./sources/problem_median/Complejidad_4.pdf)
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
 
