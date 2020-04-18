@@ -7,5 +7,5 @@ install:
 
 script: 
   - cd sources/problem4_median && make
-  - cd ...
-  - cd sources/problem7_train && make
+  - cd ..
+  - cd problem7_train && make
